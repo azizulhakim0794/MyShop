@@ -3,6 +3,7 @@ import { useApi } from "../../hooks/useApi";
 import { deleteProductFromCart, getCartItems } from "../../helper/service/product.service";
 import type { CartType } from "../../type/product";
 import OrderConfirmModal from "../modals/OrderConfirmModal";
+import Loading from "../../components/loading";
 
 const Cart = () => {
 
@@ -33,7 +34,7 @@ const Cart = () => {
     }, [showOrderModal]);
 
     if (isLoading)
-        return <>Loading....</>
+        return <><Loading /></>
 
 
     const removeProductFromCart = async (product_id: number) => {
